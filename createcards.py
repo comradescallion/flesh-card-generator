@@ -17,6 +17,15 @@ def wrap_text(text, font, max_width):
     lines.append(current_line)
     return lines
 
+def draw_center_text(draw, xy, text, fill, font):
+    x = xy[0]
+    y = xy[1]
+
+    x -= font.getsize(text)[0] / 2
+    y -= font.getsize(text)[1] / 2
+
+    draw.text((x, y), text, fill, font)
+
 def create_card(name, type_, energy, trigger, description, output_path):
     card_width, card_height = 400, 600
     card = Image.new("RGB", (card_width, card_height), "white")
@@ -38,17 +47,18 @@ def create_card(name, type_, energy, trigger, description, output_path):
     draw.rectangle([275, 15, 345, 45], outline="black", width=3)  # Type box
     draw.rectangle([10, 450, 390, 580], outline="black", width=3)  # Description box
     
-    # if text doesn't overlap
+    # if text doesn't overlap, name text
     if font.getsize(name)[0] <= 300:
         draw.text((20, 20), name, fill="black", font=font)
     else:
-        draw.text((20, 20), name, fill="black", font=small_font)
+        draw.text((20, 22), name, fill="black", font=small_font)
 
-    draw.text((287, 21), type_, fill="black", font=small_font)
-    draw.text((355, 15), energy + "⚡", fill="black", font=spec_char_font)
+
+    draw_center_text(draw, (310, 30), type_, fill="black", font=small_font) # type text
+    draw.text((355, 15), energy + "⚡", fill="black", font=spec_char_font) # type text
     
-    draw.text((20, 460), trigger, fill="black", font=font)
-    description_lines = wrap_text(description, small_font, 360)
+    draw.text((20, 460), trigger, fill="black", font=font) # trigger text
+    description_lines = wrap_text(description, small_font, 360) # description text
     y_offset = 490
     for line in description_lines:
         draw.text((20, y_offset), line, fill="black", font=small_font)
