@@ -1,5 +1,10 @@
+import os
 import csv
 from PIL import Image, ImageDraw, ImageFont
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+
+CARD_WIDTH, CARD_HEIGHT = 400, 600
 
 def wrap_text(text, font, max_width):
     words = text.split()
@@ -26,9 +31,42 @@ def draw_center_text(draw, xy, text, fill, font):
 
     draw.text((x, y), text, fill, font)
 
+def create_pdf(card_folder, output_pdf):
+    c = canvas.Canvas(output_pdf, pagesize=letter)
+    margin = 20
+    page_width, page_height = letter
+    grid_width = page_width - 2 * margin
+    grid_height = page_height - 2 * margin
+
+    grid_cols = 3
+    cell_width = grid_width / grid_cols
+    cell_height = (cell_width / CARD_WIDTH) * CARD_HEIGHT
+    grid_rows = int(grid_height / cell_height) # flexible based on how many fit
+
+    card_files = [f for f in os.listdir(card_folder) if f.lower().endswith('.png')]
+
+    for i in range(0, len(card_files), grid_rows * grid_cols):
+        images_batch = card_files[i:i + grid_rows * grid_cols]
+        c.showPage()
+
+        print(f"Creating page {int(i / (grid_rows * grid_cols)) + 1}...")
+        
+        for idx, image_path in enumerate(images_batch):
+            x_pos = margin + (idx % grid_cols) * cell_width
+            y_pos = page_height - margin - ((idx // grid_cols) + 1) * cell_height
+            
+            c.drawInlineImage(os.path.join(output_folder, image_path), x_pos, y_pos, width=cell_width, height=cell_height)
+            print(f"\tDrew card {idx + 1}: {image_path}")
+
+    c.save()
+
+
+    print("PDF created successfully!")
+
+    
+
 def create_card(name, type_, energy, trigger, description, output_path):
-    card_width, card_height = 400, 600
-    card = Image.new("RGB", (card_width, card_height), "white")
+    card = Image.new("RGB", (CARD_WIDTH, CARD_HEIGHT), "white")
     draw = ImageDraw.Draw(card)
     
     try:
@@ -81,5 +119,13 @@ def generate_cards_from_tsv(tsv_file, output_folder):
 
 tsv_file = "database.tsv"
 output_folder = "cards"
+# empty folder before creating cards
+for filename in os.listdir(output_folder):
+    file_path = os.path.join(output_folder, filename)
+    os.remove(file_path)
+
 generate_cards_from_tsv(tsv_file, output_folder)
 
+output_pdf = "cardsheet.pdf"
+print("Creating PDF...")
+create_pdf(output_folder, output_pdf)
