@@ -70,8 +70,8 @@ def create_card(name, type_, energy, trigger, description, output_path):
     draw = ImageDraw.Draw(card)
     
     try:
-        font = ImageFont.truetype("FLESH.ttc", 20)
-        small_font = ImageFont.truetype("FLESH.ttc", 16)
+        font = ImageFont.truetype("FLESH.ttf", 20)
+        small_font = ImageFont.truetype("FLESH.ttf", 16)
 
         # font = ImageFont.truetype("DejaVuSans.ttf", 20)
         # small_font = ImageFont.truetype("DejaVuSans.ttf", 16)
