@@ -1,10 +1,10 @@
 Name	Type	Energy	Trigger	Description
 Broken Hard Hat	HEAD	1	When Played	All players salvage a card. Perish this.
 Rusty Shovel	ARM	1	When Turn Starts	You may discard a card to draw a card.
-Matching Mittens	ARM	2	When Turn Starts	+1| if you have another ARM.
+Matching Mittens	ARM	2	When Turn Starts	+1⚡ if you have another ARM.
 Wristwatch	ARM	2	When Scrapped	Discard 3 cards and skip the rest of your turn.
 Callous Hands	ARM	2	Passive	Players cannot force you to scrap LIMBs.
-Broom	ARM	2	Spend 2|	Move the top card of the discard to the bottom.
+Broom	ARM	2	Spend 2⚡	Move the top card of the discard to the bottom.
 Sausage Fork	ARM	3	When Scrapped	You don’t need to eat FOOD this turn.
 Arcade Claw	ARM	3	When Played	Choose a player. Steal a random card from their hand.
 Scissor Hands	ARM	3	Passive	Cards stolen from you must be immediately discarded.
@@ -16,36 +16,36 @@ Phoenix Feather	ARM	4	Passive	Whenever you scrap a LIMB, you may perish this ins
 Fishing Rod	ARM	4	When Played	Draw cards until you draw FOOD.
 Electric Whip	ARM	4	When Played	Steal a card from each player's hand.
 Flesh Grafted Rocket Launcher	ARM	4	When Played	Choose a player. Choose a LIMB for them to scrap.
-Edible Arm	ARM	4	When Scrapped	+2|. You don't need to eat FOOD this turn.
-Water Cooler	BODY	1	Passive	Each player gets +1| when their turn starts.
-Lump of FLESH	BODY	1	When Turn Starts	+1|
+Edible Arm	ARM	4	When Scrapped	+2⚡. You don't need to eat FOOD this turn.
+Water Cooler	BODY	1	Passive	Each player gets +1⚡ when their turn starts.
+Lump of FLESH	BODY	1	When Turn Starts	+1⚡
 Gasoline Barrel	BODY	2	When Played	 All players draw 2 cards.
-Battery Pack	BODY	2	When Played	+3|
-Lump of Parasitic FLESH	BODY	3	When Turn Starts	+3| if you have no other LIMBs.
-Fusion Reactor	BODY	3	Passive	The third LIMB you play each turn costs only 1|.
+Battery Pack	BODY	2	When Played	+3⚡
+Lump of Parasitic FLESH	BODY	3	When Turn Starts	+3⚡ if you have no other LIMBs.
+Fusion Reactor	BODY	3	Passive	The third LIMB you play each turn costs only 1⚡.
 Trash Can	BODY	3	When Played	Salvage a card. Perish this.
-Mini Fridge	BODY	3	When Scrapped	+4|
-Jetpack	BODY	3	When Turn Starts	+1| if you have no LEGS.
+Mini Fridge	BODY	3	When Scrapped	+4⚡
+Jetpack	BODY	3	When Turn Starts	+1⚡ if you have no LEGS.
 Explosive Safe	BODY	3	When Scrapped	Scrap the rest of your MASS. Draw 5 cards.
-Teleport Chamber	BODY	3	Spend 5|	Move any LIMB to another player.
-Hanging Nerves	BODY	4	When Turn Starts	+3| if you have a full MASS.
+Teleport Chamber	BODY	3	Spend 5⚡	Move any LIMB to another player.
+Hanging Nerves	BODY	4	When Turn Starts	+3⚡ if you have a full MASS.
 Spiky Torso	BODY	4	Passive	Players cannot steal cards from you.
-Secondary Mouth	BODY	4	Passive	When you scrap a LIMB, +1|.
+Secondary Mouth	BODY	4	Passive	When you scrap a LIMB, +1⚡.
 Furnace	BODY	4	When Played	Retrigger all of your ‘When Played’ LIMBs. Perish this.
 Thermal Detonator	BODY	4	When Played	All players must choose a LIMB to scrap.
 Chameleon Cloak	BODY	4	When Scrapped	Skip the rest of your turn.
-Incinerator	BODY	4	Spend 2|	Discard the top draw.
+Incinerator	BODY	4	Spend 2⚡	Discard the top draw.
 LIMB Adapter	BODY	5	Passive	You can attach LIMBs anywhere on your MASS.
-Nano Tool Kit	BODY	5	Spend 3|	Choose any LIMB in play. Its effect doesn't happen on its next turn.
+Nano Tool Kit	BODY	5	Spend 3⚡	Choose any LIMB in play. Its effect doesn't happen on its next turn.
 Placebo Pill	FOOD	0	When Played	Copy the effect from the top FOOD of the discard. Then perish this.
-Box of Chocolates	FOOD	0	When Played	Draw a card. If it's a LIMB, this gives +| equal to its cost. Then perish this.
+Box of Chocolates	FOOD	0	When Played	Draw a card. If it's a LIMB, this gives +⚡ equal to its cost. Then perish this.
 Ice Soup	FOOD	1	When Played	If this is your first time eating this, put it back anywhere in the draw. Otherwise, discard this.
 Ipecac	FOOD	2	When Played	Discard the top 5 cards of the draw. Discard this.
 Ozempic	FOOD	1	When Played	You don't need to eat FOOD on your next turn. Perish this.
 Sleeping Pills	FOOD	1	When Played	Keep this in front of you. On your next turn, skip it and then perish this.
-Supplements	FOOD	1	When Played	LIMBs cost -1| to play this turn. Discard this.
+Supplements	FOOD	1	When Played	LIMBs cost -1⚡ to play this turn. Discard this.
 Warp Fluid	FOOD	1	When Played	Move a card from the discard to the bottom of the draw. Perish this.
-Side of Fries	FOOD	1	When Played	The next FOOD you eat this turn gives +2|. Perish this.
+Side of Fries	FOOD	1	When Played	The next FOOD you eat this turn gives +2⚡. Perish this.
 Apple	FOOD	1	When Played	Until your next turn, players can't steal from you. Discard this.
 Banana Peel	FOOD	1	When Played	Perish this.
 Grub	FOOD	2	When Played	Discard this.
@@ -57,26 +57,26 @@ Candy-Flavored Acid	FOOD	8	When Played	Scrap your MASS. Perish this.
 Drone	HEAD	1	When Played	Look at the top 3 cards of the draw pile.
 Hard Hat	HEAD	1	When Played	Take the bottom card of the draw pile.
 Large Nose	HEAD	2	When Played	 If the top discard is FOOD, salvage it.
-Hologram Projector	ARM	2	Spend 4|	Copy the effect of another LIMB in play for the rest of your turn.
-Bionic Eye	HEAD	3	Spend 2|	Perish the top card of the discard.
+Hologram Projector	ARM	2	Spend 4⚡	Copy the effect of another LIMB in play for the rest of your turn.
+Bionic Eye	HEAD	3	Spend 2⚡	Perish the top card of the discard.
 SCUBA Mask	HEAD	3	When Scrapped	Salvage the bottom discard.
-Oven	BODY	3	Passive	FOOD gives +1|.
-Glue Bottle	ARM	3	Passive	You may play your next LIMB for only 2|.
+Oven	BODY	3	Passive	FOOD gives +1⚡.
+Glue Bottle	ARM	3	Passive	You may play your next LIMB for only 2⚡.
 Generative AI	BODY	4	Passive	You may have up to 3 ARMs on your MASS.
-Solar Panel	HEAD	4	Passive	The first time you play a LIMB each turn, +1|.
+Solar Panel	HEAD	4	Passive	The first time you play a LIMB each turn, +1⚡.
 Broken Gas Mask	HEAD	5	Passive	Whenever you scrap a LIMB, force another player to also scrap a LIMB of their choice.
-Shark Head	HEAD	5	Spend 4|	Salvage the bottommost FOOD of the discard.
+Shark Head	HEAD	5	Spend 4⚡	Salvage the bottommost FOOD of the discard.
 Primordial Brain	HEAD	7	Passive	When you salvage, you may salvage again.
 Roller Skates	LEGS	1	When Played	Put a card from your hand at the top of the draw.
 Tripod	LEGS	1	When Turn Starts	Look at the top card of the draw pile.
 Expendable Pants	LEGS	2	Passive	When a player steals from you, they must steal this.
 Hiking Pants	LEGS	2	When Played	Draw a card.
 Steel Boots	LEGS	2	Passive	No player can scrap LEGS.
-Trampoline	LEGS	2	When Played	Draw a card. If it's a LEGS, +2|.
+Trampoline	LEGS	2	When Played	Draw a card. If it's a LEGS, +2⚡.
 Schrodinger’s Pants	LEGS	2	When Played	You may swap this with the top LEGS of the discard.
-Peg Leg	LEGS	3	Spend 3|	Have a player scrap their current LEGS. Put this card in its place.
-Unicycle	LEGS	3	When Turn Starts	+2| if you have no ARMs.
-Vulture Claws	LEGS	4	Passive	Once per turn you may discard a LEGS from your hand for +2|.
+Peg Leg	LEGS	3	Spend 3⚡	Have a player scrap their current LEGS. Put this card in its place.
+Unicycle	LEGS	3	When Turn Starts	+2⚡ if you have no ARMs.
+Vulture Claws	LEGS	4	Passive	Once per turn you may discard a LEGS from your hand for +2⚡.
 Gingerbread Legs	LEGS	4	When Played	Discard from the draw until you get LEGS, then add it to your hand. Perish this.
 Luxury Tennis Shoes	LEGS	5	Passive	If any player starts their turn without LEGS, they must eat 2 FOOD that turn to survive.
 Giant's Feet	LEGS	6	When Played	Perish the entire discard (except for LEGS).

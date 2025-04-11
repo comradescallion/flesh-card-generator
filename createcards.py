@@ -70,12 +70,12 @@ def create_card(name, type_, energy, trigger, description, output_path):
     draw = ImageDraw.Draw(card)
     
     try:
-        # font = ImageFont.truetype("Excalifont-Regular.ttf", 20)
-        # small_font = ImageFont.truetype("Excalifont-Regular.ttf", 16)
+        font = ImageFont.truetype("FLESH.ttc", 20)
+        small_font = ImageFont.truetype("FLESH.ttc", 16)
 
-        font = ImageFont.truetype("DejaVuSans.ttf", 20)
-        small_font = ImageFont.truetype("DejaVuSans.ttf", 16)
-        spec_char_font = ImageFont.truetype("DejaVuSans.ttf", 25)
+        # font = ImageFont.truetype("DejaVuSans.ttf", 20)
+        # small_font = ImageFont.truetype("DejaVuSans.ttf", 16)
+        # spec_char_font = ImageFont.truetype("DejaVuSans.ttf", 25)
     except IOError:
         font = ImageFont.load_default()
         small_font = ImageFont.load_default()
@@ -93,7 +93,7 @@ def create_card(name, type_, energy, trigger, description, output_path):
 
 
     draw_center_text(draw, (310, 30), type_, fill="black", font=small_font) # type text
-    draw.text((355, 15), energy + "⚡", fill="black", font=spec_char_font) # type text
+    draw.text((355, 15), energy + "|", fill="black", font=font) # type text
     
     draw.text((20, 460), trigger, fill="black", font=font) # trigger text
     description_lines = wrap_text(description, small_font, 360) # description text
