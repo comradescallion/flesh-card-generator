@@ -82,18 +82,18 @@ def create_card(name, type_, energy, trigger, description, output_path):
     
     draw.rectangle([5, 5, 395, 595], outline="black", width=3)
     draw.rectangle([10, 10, 350, 50], outline="black", width=3)  # Name box
-    draw.rectangle([275, 15, 345, 45], outline="black", width=3)  # Type box
+    draw.rectangle([10, 50, 80, 80], outline="black", width=3)  # Type box
     draw.rectangle([10, 450, 390, 580], outline="black", width=3)  # Description box
     
     # if text doesn't overlap, name text
-    if font.getsize(name)[0] <= 300:
+    if font.getsize(name)[0] <= 330:
         draw.text((20, 20), name, fill="black", font=font)
     else:
         draw.text((20, 22), name, fill="black", font=small_font)
 
 
-    draw_center_text(draw, (310, 30), type_, fill="black", font=small_font) # type text
-    draw.text((355, 15), energy + "|", fill="black", font=font) # type text
+    draw_center_text(draw, (45, 65), type_, fill="black", font=small_font) # type text
+    draw_center_text(draw, (370, 30), energy + "|", fill="black", font=font) # type text
     
     draw.text((20, 460), trigger, fill="black", font=font) # trigger text
     description_lines = wrap_text(description, small_font, 360) # description text
