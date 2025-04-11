@@ -93,7 +93,12 @@ def create_card(name, type_, energy, trigger, description, output_path):
 
 
     draw_center_text(draw, (45, 65), type_, fill="black", font=small_font) # type text
-    draw_center_text(draw, (370, 30), energy + "|", fill="black", font=font) # type text
+
+    # if food, add '+'
+    if type_.lower() == "food":
+        draw_center_text(draw, (370, 30), "+" + energy + "|", fill="black", font=font) # type text (food)
+    else: 
+        draw_center_text(draw, (370, 30), energy + "|", fill="black", font=font) # type text
     
     draw.text((20, 460), trigger, fill="black", font=font) # trigger text
     description_lines = wrap_text(description, small_font, 360) # description text
