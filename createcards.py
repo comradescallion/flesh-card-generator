@@ -68,10 +68,14 @@ def create_pdf(card_folder, output_pdf):
 def create_card(name, type_, energy, trigger, description, output_path):
     card = Image.new("RGB", (CARD_WIDTH, CARD_HEIGHT), "white")
     draw = ImageDraw.Draw(card)
+    template = Image.open("blank.png")
+    card.paste(template, (0, 0))
     
     try:
         font = ImageFont.truetype("FLESH.ttf", 20)
         small_font = ImageFont.truetype("FLESH.ttf", 18)
+        name_small_font = ImageFont.truetype("FLESH.ttf", 16)
+        font_big = ImageFont.truetype("FLESH.ttf", 30)
 
         # font = ImageFont.truetype("DejaVuSans.ttf", 20)
         # small_font = ImageFont.truetype("DejaVuSans.ttf", 16)
@@ -80,31 +84,31 @@ def create_card(name, type_, energy, trigger, description, output_path):
         font = ImageFont.load_default()
         small_font = ImageFont.load_default()
     
-    draw.rectangle([5, 5, 395, 595], outline="black", width=3)
-    draw.rectangle([10, 10, 350, 50], outline="black", width=3)  # Name box
-    draw.rectangle([10, 50, 80, 80], outline="black", width=3)  # Type box
-    draw.rectangle([10, 450, 390, 580], outline="black", width=3)  # Description box
+    # draw.rectangle([5, 5, 395, 595], outline="black", width=3)
+    # draw.rectangle([10, 10, 350, 50], outline="black", width=3)  # Name box
+    # draw.rectangle([10, 50, 80, 80], outline="black", width=3)  # Type box
+    # draw.rectangle([10, 450, 390, 580], outline="black", width=3)  # Description box
     
     # if text doesn't overlap, name text
-    if font.getsize(name)[0] <= 330:
-        draw.text((20, 20), name, fill="black", font=font)
+    if font.getsize(name)[0] <= 256:
+        draw.text((40, 48), name, fill="black", font=font)
     else:
-        draw.text((20, 22), name, fill="black", font=small_font)
+        draw.text((40, 52), name, fill="black", font=name_small_font)
 
 
-    draw_center_text(draw, (45, 65), type_, fill="black", font=small_font) # type text
+    draw_center_text(draw, (108, 100), type_, fill="black", font=small_font) # type text
 
     # if food, add '+'
     if type_.lower() == "food":
-        draw_center_text(draw, (370, 30), "+" + energy + "|", fill="black", font=font) # type text (food)
+        draw.text((337 - font_big.getsize("+" + energy)[0], 38), "+" + energy, fill="black", font=font_big) # type text (food)
     else: 
-        draw_center_text(draw, (370, 30), energy + "|", fill="black", font=font) # type text
+        draw.text((337 - font_big.getsize(energy)[0], 38), energy, fill="black", font=font_big) # type text
     
-    draw.text((20, 460), trigger, fill="black", font=font) # trigger text
-    description_lines = wrap_text(description, small_font, 360) # description text
-    y_offset = 490
+    draw.text((48, 406), trigger, fill="black", font=font) # trigger text
+    description_lines = wrap_text(description, small_font, 320) # description text
+    y_offset = 450
     for line in description_lines:
-        draw.text((20, y_offset), line, fill="black", font=small_font)
+        draw.text((48, y_offset), line, fill="black", font=small_font)
         y_offset += small_font.getsize(line)[1]
     
     card.save(output_path)
