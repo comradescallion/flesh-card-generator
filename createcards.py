@@ -5,7 +5,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 
 CARD_WIDTH, CARD_HEIGHT = 400, 600
-ITEM_WIDTH, ITEM_HEIGHT = 260, 260
+ITEM_WIDTH, ITEM_HEIGHT = 240, 240
 
 def wrap_text(text, font, max_width):
     words = text.split()
@@ -115,14 +115,15 @@ def create_card(name, type_, energy, trigger, description, output_path):
 
     # add item image
     try:
-        item = Image.open(name + ".png")
+        item = Image.open("images/" + name + ".png")
+        item = item.convert("RGBA")
         print(f"Added image of {name}")
     except IOError:
-        item = Image.new("RGB", (ITEM_WIDTH, ITEM_HEIGHT), "white")
+        item = Image.new("RGBA", (ITEM_WIDTH, ITEM_HEIGHT), "white")
         print(f"No image of {name} exists")
 
     item = item.resize((ITEM_WIDTH, ITEM_HEIGHT), Image.BICUBIC)
-    card.paste(item, ((int)(CARD_WIDTH / 2) - ITEM_WIDTH, 125))
+    card.paste(item, ((int)(CARD_WIDTH / 2) - (int)(ITEM_WIDTH / 2), 132), item)
     
     card.save(output_path)
     print(f"Saved: {output_path}")
